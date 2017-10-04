@@ -1,0 +1,31 @@
+#cover {
+    background: #222 url('/assets/img/cover.jpg') center center no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#cover-caption {
+    width: 100%;
+}
+
+#cover-content {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 1.875rem;
+}
+
+.container {
+    padding: 3.6rem 0 0 0;
+}
+
+#aLogin {
+    padding: 5%;
+}
+
+h6#emailHelp {
+    font-size: small;
+}

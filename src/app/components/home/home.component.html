@@ -1,0 +1,39 @@
+<section id="cover">
+  <div id="cover-caption">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto" id="cover-content">
+          <h1 class="display-3">Hello?</h1>
+          <p>You are visited XaFF</p>
+          <button type='button' class='btn btn-success btn-lg' data-toggle='modal' data-target='#modal-login'>Log in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true">
+<app-toast [message]="toast.message"></app-toast>
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-login-label">Log In</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form id="aLogin" [formGroup]="aLogin" (ngSubmit)="login()">
+    <div class="input-group" [ngClass]="setClassEmail()">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+      <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+    </div>
+    <h6 id="emailHelp" class="text-muted">We'll never share your email with anyone else.</h6>
+    <br>
+    <div class="input-group" [ngClass]="setClassPassword()">
+      <span class="input-group-addon"><i class="fa fa-key"></i></span>
+      <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+    </div>
+    <br>
+    <a class="btn btn-primary" role="button" routerLink="/register"><i class="fa fa-user-plus"></i> Register</a>
+    <button class="btn btn-success" type="submit" [disabled]="!aLogin.valid"><i class="fa fa-sign-in"></i> Login</button>
+  </form>
+</div>
