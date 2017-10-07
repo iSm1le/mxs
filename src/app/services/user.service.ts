@@ -9,7 +9,7 @@ export class UserService {
 
   private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
   private options = new RequestOptions({ headers: this.headers });
-  private apiURL = new URL('http://api.xaff.ru/');
+  private apiURL = new URL('https://api.xaff.ru/');
 
   constructor(private http: Http) { }
 
