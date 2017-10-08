@@ -9,7 +9,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+  styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
 
@@ -27,7 +27,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     if (this.auth.loggedIn) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/panel']);
     }
     this.aLogin = this.formBuilder.group({
       email: this.email,
@@ -44,7 +44,7 @@ export class AuthComponent implements OnInit {
 
   login() {
     this.auth.login(this.aLogin.value).subscribe(
-      res => this.router.navigate(['/']),
+      res => this.router.navigate(['/panel']),
       error => this.toast.setMessage('Invalid email or password!', 'danger')
     );
   }

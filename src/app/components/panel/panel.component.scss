@@ -1,0 +1,25 @@
+$closed: 70px;
+$opened: 200px;
+
+#main-content {
+  padding-left: $closed;
+  transition: padding .8s ease 0s;
+}
+
+#main-content.active {
+  padding-left: $opened;
+  transition: padding .8s ease 0s;
+}
+
+@media (max-width:767px) {
+
+  #main-content {
+    padding-left: $closed;
+    transition: padding .8s ease 0s;
+  }
+
+  #main-content.active {
+    padding-left: $opened;
+    transition: padding .8s ease 0s;
+  }
+}

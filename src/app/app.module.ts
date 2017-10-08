@@ -10,6 +10,8 @@ import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { SharedModule } from './components/shared/shared.module';
 import { PanelComponent } from './components/panel/panel.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { SidebarComponent } from './components/panel/sidebar/sidebar.component';
+import { PusersComponent } from './components/panel/content/pusers/pusers.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AuthComponent } from './components/auth/auth.component';
     NotfoundComponent,
     PanelComponent,
     AuthComponent,
+    SidebarComponent,
+    PusersComponent,
   ],
   imports: [
     RoutingModule,

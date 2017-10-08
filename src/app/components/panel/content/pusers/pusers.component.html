@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <table class="table table-inverse table-striped table-bordered">
+    <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Job</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button class="btn btn-warning" (click)="editUser(user._id)">Edit</button>
+        <button class="btn btn-danger" *ngIf="auth.currentUser._id != user._id" (click)="deleteUser(user._id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
