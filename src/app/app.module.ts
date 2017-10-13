@@ -12,6 +12,8 @@ import { PanelComponent } from './components/panel/panel.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { SidebarComponent } from './components/panel/sidebar/sidebar.component';
 import { PusersComponent } from './components/panel/content/pusers/pusers.component';
+import { PuserseditComponent } from './components/panel/content/pusers/pusersedit/pusersedit.component';
+import { PusersaddComponent } from './components/panel/content/pusers/pusersadd/pusersadd.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { PusersComponent } from './components/panel/content/pusers/pusers.compon
     AuthComponent,
     SidebarComponent,
     PusersComponent,
+    PuserseditComponent,
+    PusersaddComponent,
   ],
   imports: [
     RoutingModule,

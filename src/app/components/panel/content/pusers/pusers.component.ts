@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../../services/user.service';
 import { AuthService } from '../../../../services/auth.service';
+import { Router } from '@angular/router';
 import { User } from './pusers.model';
 
 @Component({
@@ -11,6 +12,7 @@ import { User } from './pusers.model';
 export class PusersComponent implements OnInit {
 
   constructor(private userService: UserService,
+              public router: Router,
               public auth: AuthService) { }
 
   public users: User[] = [];
@@ -30,8 +32,12 @@ export class PusersComponent implements OnInit {
     });
   }
 
-  editUser() {}
-
-  deleteUser() {}
+  deleteUser(user: User, i: number) {
+    this.userService.deleteUser(user).subscribe(res => {
+      if (res.status === 200) {
+        this.users.splice(i, 1);
+      }
+    });
+  }
 
 }

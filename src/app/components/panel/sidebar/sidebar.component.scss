@@ -1,6 +1,6 @@
 .row{
-  margin-left:0px;
-  margin-right:0px;
+  margin-left:0;
+  margin-right:0;
 }
 
 #sidebar-wrapper {
@@ -50,7 +50,6 @@
   -webkit-transition: background .5s;
   -moz-transition: background .5s;
   -o-transition: background .5s;
-  -ms-transition: background .5s;
   transition: background .5s;
 }
 .sidebar_name {
@@ -120,8 +119,7 @@
 }
 
 .content-header h1 {
-  margin: 0;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
   line-height: 65px;
   display: inline-block;
 }

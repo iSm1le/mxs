@@ -14,10 +14,11 @@
       <td>{{user.username}}</td>
       <td>{{user.email}}</td>
       <td>
-        <button class="btn btn-warning" (click)="editUser(user._id)">Edit</button>
-        <button class="btn btn-danger" *ngIf="auth.currentUser._id != user._id" (click)="deleteUser(user._id)">Delete</button>
+        <button class="btn btn-warning" routerLink="edit/{{user._id}}"><i class="fa fa-edit"></i></button>
+        <button class="btn btn-danger" *ngIf="auth.currentUser._id != user._id" (click)="deleteUser(user, i)"><i class="fa fa-remove"></i></button>
       </td>
     </tr>
     </tbody>
   </table>
+  <button type="button" class="btn btn-success btn-add" routerLink="add"><i class="fa fa-plus"></i> Add</button>
 </div>
