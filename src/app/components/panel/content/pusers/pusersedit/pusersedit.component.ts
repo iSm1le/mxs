@@ -45,7 +45,6 @@ export class PuserseditComponent implements OnInit, OnDestroy {
       this.user = res;
       this.email.setValue(this.user.email);
       this.username.setValue(this.user.username);
-      console.log(this.user);
     });
   }
 

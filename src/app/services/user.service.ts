@@ -7,7 +7,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
 
-  private headers = new Headers({ 'Content-Type': 'application/json', 'charset': 'UTF-8' });
+  private token = localStorage.getItem('token') ? localStorage.getItem('token') : null;
+  private headers = new Headers({
+    'Content-Type': 'application/json',
+    'charset': 'UTF-8',
+    'x-auth-token': this.token
+  });
   private options = new RequestOptions({ headers: this.headers });
   private apiURL = new URL('https://api.xaff.ru/');
 
@@ -22,11 +27,11 @@ export class UserService {
   }
 
   getUsers(): Observable<any> {
-    return this.http.get(this.apiURL + 'users').map(res => res.json());
+    return this.http.get(this.apiURL + 'users?token=' + this.token).map(res => res.json());
   }
 
   countUsers(): Observable<any> {
-    return this.http.get(this.apiURL + 'users/count').map(res => res.json());
+    return this.http.get(this.apiURL + 'users/count?token=' + this.token).map(res => res.json());
   }
 
   addUser(user): Observable<any> {
@@ -34,10 +39,11 @@ export class UserService {
   }
 
   getUser(user): Observable<any> {
-    return this.http.get(this.apiURL + `user/id/${user._id}`).map(res => res.json());
+    return this.http.get(this.apiURL + `user/id/${user._id}?token=${this.token}`).map(res => res.json());
   }
 
   editUser(user): Observable<any> {
+    console.log(this.token);
     return this.http.put(this.apiURL + `user/id/${user._id}`, JSON.stringify(user), this.options);
   }
 
@@ -46,7 +52,7 @@ export class UserService {
   }
 
   getGroups(): Observable<any> {
-    return this.http.get(this.apiURL + 'groups').map(res => res.json());
+    return this.http.get(this.apiURL + 'groups?token=' + this.token).map(res => res.json());
   }
 
   addGroup(group): Observable<any> {
@@ -54,7 +60,7 @@ export class UserService {
   }
 
   getGroup(group): Observable<any> {
-    return this.http.get(this.apiURL + `group/id/${group._id}`).map(res => res.json());
+    return this.http.get(this.apiURL + `group/id/${group._id}?token=${this.token}`).map(res => res.json());
   }
 
   editGroup(group): Observable<any> {
