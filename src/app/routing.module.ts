@@ -7,8 +7,9 @@ import { PanelComponent } from './components/panel/panel.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { PusersComponent } from './components/panel/content/pusers/pusers.component';
-import {PusersaddComponent} from './components/panel/content/pusers/pusersadd/pusersadd.component';
-import {PuserseditComponent} from './components/panel/content/pusers/pusersedit/pusersedit.component';
+import { PusersaddComponent } from './components/panel/content/pusers/pusersadd/pusersadd.component';
+import { PuserseditComponent } from './components/panel/content/pusers/pusersedit/pusersedit.component';
+import { PgroupsComponent } from './components/panel/content/pgroups/pgroups.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,8 +17,9 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'users', pathMatch: 'full' },
       { path: 'users', component: PusersComponent },
-      { path: 'users/add', component: PusersaddComponent},
-      { path: 'users/edit/:id', component: PuserseditComponent},
+      { path: 'users/add', component: PusersaddComponent },
+      { path: 'users/edit/:id', component: PuserseditComponent },
+      { path: 'groups', component: PgroupsComponent }
     ]},
   { path: 'auth', component: AuthComponent },
   { path: 'notfound', component: NotfoundComponent },

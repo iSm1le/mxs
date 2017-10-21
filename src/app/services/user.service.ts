@@ -45,4 +45,23 @@ export class UserService {
     return this.http.delete(this.apiURL + `user/id/${user._id}`, this.options);
   }
 
+  getGroups(): Observable<any> {
+    return this.http.get(this.apiURL + 'groups').map(res => res.json());
+  }
+
+  addGroup(group): Observable<any> {
+    return this.http.post(this.apiURL + 'group', JSON.stringify(group), this.options);
+  }
+
+  getGroup(group): Observable<any> {
+    return this.http.get(this.apiURL + `group/id/${group._id}`).map(res => res.json());
+  }
+
+  editGroup(group): Observable<any> {
+    return this.http.put(this.apiURL + `group/id/${group._id}`, JSON.stringify(group), this.options);
+  }
+
+  deleteGroup(group): Observable<any> {
+    return this.http.delete(this.apiURL + `group/id/${group._id}`, this.options);
+  }
 }
