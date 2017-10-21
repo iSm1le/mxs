@@ -8,7 +8,8 @@
     "start": "ng serve",
     "build": "ng build",
     "build-prod": "ng build -aot -prod",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

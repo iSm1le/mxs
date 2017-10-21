@@ -31,5 +31,3 @@ stages:
   - name: deploy
     if: branch = master
 script: skip
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
