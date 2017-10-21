@@ -20,9 +20,16 @@ before_install:
   - sudo apt-get update
   - npm explore npm -g -- npm install node-gyp@latest
 install: npm install
-script:
- - bash ./ci/test.sh
+jobs:
+  include:
+    - stage: test
+      script: ./ci/test.sh
+    - stage: deploy
+      script: ./ci/deploy.sh
+stages:
+  - test
+  - name: deploy
+    if: branch = master
+script: skip
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-deploy:
-  - bash ./ci/deploy.sh
